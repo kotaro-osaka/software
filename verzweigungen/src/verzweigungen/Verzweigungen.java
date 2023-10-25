@@ -3,6 +3,7 @@ package verzweigungen;
 import java.util.Scanner;
 
 public class Verzweigungen {
+	static int auswahl;
 	
 	public static void AuswahlAufgabe() {
 		System.out.println("Es stehen 6 Aufgaben zur Verfuegung. Geben Sie eine Zahl ein, um die jeweilige Aufgabe zu starten.");
@@ -14,9 +15,7 @@ public class Verzweigungen {
 		System.out.println("6. Nach Eingabe einer Jahreszahl, bestimmen, ob es sich um ein Schaltjahr handelt");
 		
 		Scanner scanner = new Scanner(System.in);
-		int auswahl = scanner.nextInt();
-		
-		scanner.close();
+		auswahl = scanner.nextInt();
 		
 		Auswahl(auswahl);
 	}
@@ -62,8 +61,6 @@ public class Verzweigungen {
 		Scanner scanner1 = new Scanner(System.in);
 		double nettoJahr = scanner1.nextDouble();
 		
-		scanner1.close();
-		
 		if (nettoJahr >= 70000.00) {
 			double bonus = nettoJahr * 0.05;
 			System.out.println("Sie haben Anrecht auf einen Bonus in hoehe von " + bonus + "EUR.");
@@ -79,21 +76,19 @@ public class Verzweigungen {
 		Scanner scanner2 = new Scanner(System.in);
 		double kontoStand = scanner2.nextDouble();
 		
-		scanner2.close();
-		
 		double zinsen;
 		if (kontoStand <= 5000.00) {
 			zinsen = kontoStand * 0.02;
-			System.out.println("Sie haben Anrecht auf jaehrliche Zinsen in hoehe von " + zinsen + "EUR. (2%%)");
+			System.out.println("Sie haben Anrecht auf jaehrliche Zinsen in hoehe von " + zinsen + "EUR. (2%)");
 		} else if (kontoStand <= 10000.00) {
 			zinsen = kontoStand * 0.225;
-			System.out.println("Sie haben Anrecht auf jaehrliche Zinsen in hoehe von " + zinsen + "EUR. (2,25%%)");
+			System.out.println("Sie haben Anrecht auf jaehrliche Zinsen in hoehe von " + zinsen + "EUR. (2,25%)");
 		} else if (kontoStand <= 50000.00) {
 			zinsen = kontoStand * 0.25;
-			System.out.println("Sie haben Anrecht auf jaehrliche Zinsen in hoehe von " + zinsen + "EUR. (2,5%%)");
+			System.out.println("Sie haben Anrecht auf jaehrliche Zinsen in hoehe von " + zinsen + "EUR. (2,5%)");
 		} else {
 			zinsen = kontoStand * 0.275;
-			System.out.println("Sie haben Anrecht auf jaehrliche Zinsen in hoehe von " + zinsen + "EUR. (2,75%%)");
+			System.out.println("Sie haben Anrecht auf jaehrliche Zinsen in hoehe von " + zinsen + "EUR. (2,75%)");
 		}
 	}
 	
@@ -108,8 +103,6 @@ public class Verzweigungen {
 		System.out.println("Um Ihren Bruttolohn zu berechnen, geben Sie bitte Ihren Stundenlohn an.");
 		double stundenLohn = scanner3.nextDouble();
 		
-		scanner3.close();
-		
 		double bruttoLohn = 0, ueberStunden;
 		if (wochenStunden > 80.00) {
 			System.out.println("Ihr Bruttolohn konnte leider, aufgrund zu vieler Wochenstunden, nicht berechnet werden.");
@@ -123,8 +116,6 @@ public class Verzweigungen {
 				Scanner scannerSonnFeierTagStunden = new Scanner(System.in);
 				
 				double sonnFeierTagStunden = scannerSonnFeierTagStunden.nextDouble();
-				
-				scannerSonnFeierTagStunden.close();
 				
 				ueberStunden -= sonnFeierTagStunden;
 				bruttoLohn = (35 * stundenLohn) + (ueberStunden * (stundenLohn * 1.50)) + (sonnFeierTagStunden * (stundenLohn * 1.75));
@@ -142,8 +133,6 @@ public class Verzweigungen {
 		Scanner scanner4 = new Scanner(System.in);
 		
 		double ganzePositiveZahl = scanner4.nextDouble();
-		
-		scanner4.close();
 		
 		if (ganzePositiveZahl % 2 == 0 || ganzePositiveZahl == 2) {
 			System.out.println("Die Zahl " + ganzePositiveZahl + " ist gerade.");
@@ -176,8 +165,6 @@ public class Verzweigungen {
 		System.out.println("Dritte Zahl: ");
 		int tempDritteZahl = scanner5.nextInt();
 		
-		scanner5.close();
-		
 		if (tempDritteZahl != ersteZahl && tempDritteZahl != zweiteZahl) {
 			dritteZahl = tempDritteZahl;	
 		} else {
@@ -202,8 +189,6 @@ public class Verzweigungen {
 		Scanner scanner6 = new Scanner(System.in);
 		
 		int jahr = scanner6.nextInt();
-		
-		scanner6.close();
 		
 		if (jahr % 4 == 0 && jahr % 100 != 0 || jahr % 4 == 0 && jahr % 100 == 0 && jahr % 400 == 0) {
 			System.out.println("Das Jahr " + jahr + " ist ein Schaltjahr.");
