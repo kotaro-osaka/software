@@ -15,7 +15,9 @@ public class Verzweigungen {
 		
 		Scanner scanner = new Scanner(System.in);
 		int auswahl = scanner.nextInt();
+		
 		scanner.close();
+		
 		Auswahl(auswahl);
 	}
 	
@@ -59,6 +61,7 @@ public class Verzweigungen {
 		
 		Scanner scanner1 = new Scanner(System.in);
 		double nettoJahr = scanner1.nextDouble();
+		
 		scanner1.close();
 		
 		if (nettoJahr >= 70000.00) {
@@ -75,6 +78,7 @@ public class Verzweigungen {
 		
 		Scanner scanner2 = new Scanner(System.in);
 		double kontoStand = scanner2.nextDouble();
+		
 		scanner2.close();
 		
 		double zinsen;
@@ -94,7 +98,40 @@ public class Verzweigungen {
 	}
 	
 	public static void Aufgabe3() {
+		System.out.println("Sie haben Sich für Aufgabe 2 entschieden.");
+		System.out.println("Um Ihren Bruttolohn zu berechnen, geben Sie bitte Ihre geleisteten Arbeitsstunden pro Woche an.");
 		
+		Scanner scanner3 = new Scanner(System.in);
+		double wochenStunden = scanner3.nextDouble();
+		
+		System.out.println("Um Ihren Bruttolohn zu berechnen, geben Sie bitte Ihren Stundenlohn an.");
+		double stundenLohn = scanner3.nextDouble();
+		
+		scanner3.close();
+		
+		double bruttoLohn = 0, ueberStunden, ueberStundenLohn;
+		if (wochenStunden > 80.00) {
+			System.out.println("Ihr Bruttolohn konnte leider, aufgrund zu vieler Wochenstunden, nicht berechnet werden.");
+		} else if (stundenLohn > 50.00) {
+			System.out.println("Ihr Bruttolohn konnte leider, aufgrund eines zu hohen Stundenlohns, nicht berechnet werden.");
+		} else {
+			if (wochenStunden - 35 != 0.00) {
+				ueberStunden = wochenStunden - 35;
+				System.out.println("An wievielen ihrer " + ueberStunden + " Ueberstunden haben Sie an Sonn- oder Feiertagen gearbeitet?");
+				
+				Scanner scannerSonnFeierTagStunden = new Scanner(System.in);
+				
+				double sonnFeierTagStunden = scannerSonnFeierTagStunden.nextDouble();
+				
+				scannerSonnFeierTagStunden.close();
+				
+				ueberStunden -= sonnFeierTagStunden;
+				bruttoLohn = (35 * stundenLohn) + (ueberStunden * (stundenLohn * 1.50)) + (sonnFeierTagStunden * (stundenLohn * 1.75));
+			} else {
+				bruttoLohn = wochenStunden * stundenLohn;
+			}
+		}
+		System.out.println("Ihr Bruttolohn betraegt " + bruttoLohn + "EUR.");
 	}
 	
 	public static void Aufgabe4() {
