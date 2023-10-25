@@ -153,7 +153,46 @@ public class Verzweigungen {
 	}
 	
 	public static void Aufgabe5() {
+		System.out.println("Sie haben Sich für Aufgabe 4 entschieden.");
+		System.out.println("Um zu bestimmen welcher Ihrer Zahlen die groesste ist, geben Sie bitte die Zahlen nacheinander ein");
 		
+		int ersteZahl = 0, zweiteZahl = 0, dritteZahl = 0;
+		Scanner scanner5 = new Scanner(System.in);
+		
+		System.out.println("Erste Zahl: ");
+		ersteZahl = scanner5.nextInt();
+		
+		System.out.println("Zweite Zahl: ");
+		int tempZweiteZahl = scanner5.nextInt();
+		
+		if (tempZweiteZahl != ersteZahl) {
+			zweiteZahl = tempZweiteZahl;	
+		} else {
+			System.out.println("Diese Zahl wurde bereits eingegeben.");
+			System.out.println("Alle Zahlen muessen sich unterscheiden.");
+			Aufgabe5();
+		}
+		
+		System.out.println("Dritte Zahl: ");
+		int tempDritteZahl = scanner5.nextInt();
+		
+		scanner5.close();
+		
+		if (tempDritteZahl != ersteZahl && tempDritteZahl != zweiteZahl) {
+			dritteZahl = tempDritteZahl;	
+		} else {
+			System.out.println("Diese Zahl wurde bereits eingegeben.");
+			System.out.println("Alle Zahlen muessen sich unterscheiden.");
+			Aufgabe5();
+		}
+		
+		if (ersteZahl > zweiteZahl && ersteZahl > dritteZahl) {
+			System.out.println("Die Zahl " + ersteZahl + " ist die groesste Zahl der drei angegebenen Zahlen.");
+		} else if (zweiteZahl > ersteZahl && zweiteZahl > dritteZahl) {
+			System.out.println("Die Zahl " + zweiteZahl + " ist die groesste Zahl der drei angegebenen Zahlen.");
+		} else {
+			System.out.println("Die Zahl " + dritteZahl + " ist die groesste Zahl der drei angegebenen Zahlen.");
+		}
 	}
 	
 	public static void Aufgabe6() {
