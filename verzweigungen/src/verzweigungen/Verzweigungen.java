@@ -9,7 +9,7 @@ public class Verzweigungen {
 		System.out.println("1. 5%% Bonus bei Nettoabnahmemenge von mind. 70.000EUR");
 		System.out.println("2. Jaehrliche Zinsen bei Anlagebetraegen von bis zu 5.000, 10.000, 50.000, oder ab 50.000EUR berechnen");
 		System.out.println("3. Bruttolohn durch angabe von Arbeitsstunden pro Woche und Stundenlohn berechnen");
-		System.out.println("4. Nach Eingabe einer Zahl, bestimmen, ob es sich um eine gerade oder ungerade Zahl handelt");
+		System.out.println("4. Nach Eingabe einer positiven, ganzen Zahl, bestimmen, ob es sich um eine gerade oder ungerade Zahl handelt");
 		System.out.println("5. Nach Eingabe dreier Zahlen, bestimmen, welche von ihnen die groesste Zahl ist");
 		System.out.println("6. Nach Eingabe einer Jahreszahl, bestimmen, ob es sich um ein Schaltjahr handelt");
 		
@@ -98,10 +98,11 @@ public class Verzweigungen {
 	}
 	
 	public static void Aufgabe3() {
-		System.out.println("Sie haben Sich für Aufgabe 2 entschieden.");
+		System.out.println("Sie haben Sich für Aufgabe 3 entschieden.");
 		System.out.println("Um Ihren Bruttolohn zu berechnen, geben Sie bitte Ihre geleisteten Arbeitsstunden pro Woche an.");
 		
 		Scanner scanner3 = new Scanner(System.in);
+		
 		double wochenStunden = scanner3.nextDouble();
 		
 		System.out.println("Um Ihren Bruttolohn zu berechnen, geben Sie bitte Ihren Stundenlohn an.");
@@ -109,7 +110,7 @@ public class Verzweigungen {
 		
 		scanner3.close();
 		
-		double bruttoLohn = 0, ueberStunden, ueberStundenLohn;
+		double bruttoLohn = 0, ueberStunden;
 		if (wochenStunden > 80.00) {
 			System.out.println("Ihr Bruttolohn konnte leider, aufgrund zu vieler Wochenstunden, nicht berechnet werden.");
 		} else if (stundenLohn > 50.00) {
@@ -135,7 +136,20 @@ public class Verzweigungen {
 	}
 	
 	public static void Aufgabe4() {
+		System.out.println("Sie haben Sich für Aufgabe 4 entschieden.");
+		System.out.println("Um zu bestimmen, ob Ihre Zahl gerade oder ungerade ist, geben Sie bitte eine positive, ganze Zahl ein.");
 		
+		Scanner scanner4 = new Scanner(System.in);
+		
+		double ganzePositiveZahl = scanner4.nextDouble();
+		
+		scanner4.close();
+		
+		if (ganzePositiveZahl % 2 == 0 || ganzePositiveZahl == 2) {
+			System.out.println("Die Zahl " + ganzePositiveZahl + " ist gerade.");
+		} else {
+			System.out.println("Die Zahl " + ganzePositiveZahl + " ist ungerade.");
+		}
 	}
 	
 	public static void Aufgabe5() {
