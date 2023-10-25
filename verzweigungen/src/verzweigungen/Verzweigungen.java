@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Verzweigungen {
 	
 	public static void AuswahlAufgabe() {
-		// Auswahlmoeglichkeiten
 		System.out.println("Es stehen 6 Aufgaben zur Verfuegung. Geben Sie eine Zahl ein, um die jeweilige Aufgabe zu starten.");
 		System.out.println("1. 5%% Bonus bei Nettoabnahmemenge von mind. 70.000EUR");
 		System.out.println("2. Jaehrliche Zinsen bei Anlagebetraegen von bis zu 5.000, 10.000, 50.000, oder ab 50.000EUR berechnen");
@@ -13,10 +12,11 @@ public class Verzweigungen {
 		System.out.println("4. Nach Eingabe einer Zahl, bestimmen, ob es sich um eine gerade oder ungerade Zahl handelt");
 		System.out.println("5. Nach Eingabe dreier Zahlen, bestimmen, welche von ihnen die groesste Zahl ist");
 		System.out.println("6. Nach Eingabe einer Jahreszahl, bestimmen, ob es sich um ein Schaltjahr handelt");
-		// Scanner
+		
 		Scanner scanner = new Scanner(System.in);
 		int auswahl = scanner.nextInt();
 		scanner.close();
+		Auswahl(auswahl);
 	}
 	
 	public static void Auswahl(int auswahl) {
@@ -55,12 +55,14 @@ public class Verzweigungen {
 	
 	public static void Aufgabe1() {
 		System.out.println("Sie haben Sich für Aufgabe 1 entschieden.");
-		System.out.println("Um ihren Bonus zu berechnen, geben Sie bitte ihre Nettoabnahmemange pro Jahr ein.");
+		System.out.println("Um Ihren Bonus zu berechnen, geben Sie bitte ihre Nettoabnahmemange pro Jahr ein.");
+		
 		Scanner scanner1 = new Scanner(System.in);
 		double nettoJahr = scanner1.nextDouble();
 		scanner1.close();
-		if (nettoJahr > 70000.00) {
-			double bonus = nettoJahr * 1.05;
+		
+		if (nettoJahr >= 70000.00) {
+			double bonus = nettoJahr * 0.05;
 			System.out.println("Sie haben Anrecht auf einen Bonus in hoehe von " + bonus + "EUR.");
 		} else {
 			System.out.println("Die jaehrliche Nettoabnahmemenge muss mind. 70.000EUR betragen, um einen Bonus gewaehrt zu bekommen.");
@@ -68,7 +70,27 @@ public class Verzweigungen {
 	}
 	
 	public static void Aufgabe2() {
+		System.out.println("Sie haben Sich für Aufgabe 2 entschieden.");
+		System.out.println("Um Ihre Zinsen zu berechnen, geben Sie bitte Ihren Kontostand ein.");
 		
+		Scanner scanner2 = new Scanner(System.in);
+		double kontoStand = scanner2.nextDouble();
+		scanner2.close();
+		
+		double zinsen;
+		if (kontoStand <= 5000.00) {
+			zinsen = kontoStand * 0.02;
+			System.out.println("Sie haben Anrecht auf jaehrliche Zinsen in hoehe von " + zinsen + "EUR. (2%%)");
+		} else if (kontoStand <= 10000.00) {
+			zinsen = kontoStand * 0.225;
+			System.out.println("Sie haben Anrecht auf jaehrliche Zinsen in hoehe von " + zinsen + "EUR. (2,25%%)");
+		} else if (kontoStand <= 50000.00) {
+			zinsen = kontoStand * 0.25;
+			System.out.println("Sie haben Anrecht auf jaehrliche Zinsen in hoehe von " + zinsen + "EUR. (2,5%%)");
+		} else {
+			zinsen = kontoStand * 0.275;
+			System.out.println("Sie haben Anrecht auf jaehrliche Zinsen in hoehe von " + zinsen + "EUR. (2,75%%)");
+		}
 	}
 	
 	public static void Aufgabe3() {
