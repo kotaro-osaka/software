@@ -153,7 +153,7 @@ public class Verzweigungen {
 	}
 	
 	public static void Aufgabe5() {
-		System.out.println("Sie haben Sich für Aufgabe 4 entschieden.");
+		System.out.println("Sie haben Sich für Aufgabe 5 entschieden.");
 		System.out.println("Um zu bestimmen welcher Ihrer Zahlen die groesste ist, geben Sie bitte die Zahlen nacheinander ein");
 		
 		int ersteZahl = 0, zweiteZahl = 0, dritteZahl = 0;
@@ -196,7 +196,20 @@ public class Verzweigungen {
 	}
 	
 	public static void Aufgabe6() {
+		System.out.println("Sie haben Sich für Aufgabe 6 entschieden.");
+		System.out.println("Um zu bestimmen, ob Ihr Jahr ein Schaltjahr ist, geben Sie bitte das Jahr ein.");
 		
+		Scanner scanner6 = new Scanner(System.in);
+		
+		int jahr = scanner6.nextInt();
+		
+		scanner6.close();
+		
+		if (jahr % 4 == 0 && jahr % 100 != 0 || jahr % 4 == 0 && jahr % 100 == 0 && jahr % 400 == 0) {
+			System.out.println("Das Jahr " + jahr + " ist ein Schaltjahr.");
+		} else {
+			System.out.println("Das jahr " + jahr + " ist nicht ein Schaltjahr.");
+		}
 	}
 
 	public static void main(String[] args) {
