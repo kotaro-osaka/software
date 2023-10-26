@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Verzweigungen {
 	static int auswahl;
 	
-	public static void AuswahlAufgabe() {
+	public static void auswahlAufgabe() {
 		System.out.println("Es stehen 6 Aufgaben zur Verfuegung. Geben Sie eine Zahl ein, um die jeweilige Aufgabe zu starten.");
 		System.out.println("1. 5%% Bonus bei Nettoabnahmemenge von mind. 70.000EUR");
 		System.out.println("2. Jaehrliche Zinsen bei Anlagebetraegen von bis zu 5.000, 10.000, 50.000, oder ab 50.000EUR berechnen");
@@ -17,44 +17,44 @@ public class Verzweigungen {
 		Scanner scanner = new Scanner(System.in);
 		auswahl = scanner.nextInt();
 		
-		Auswahl(auswahl);
+		auswahl(auswahl);
 	}
 	
-	public static void Auswahl(int auswahl) {
+	public static void auswahl(int auswahl) {
 		switch (auswahl) {
 			case 1: {
-				Aufgabe1();
+				aufgabe1();
 				break;
 			}
 			case 2: {
-				Aufgabe2();
+				aufgabe2();
 				break;
 			}
 			case 3: {
-				Aufgabe3();
+				aufgabe3();
 				break;
 			}
 			case 4: {
-				Aufgabe4();
+				aufgabe4();
 				break;
 			}
 			case 5: {
-				Aufgabe5();
+				aufgabe5();
 				break;
 			}
 			case 6: {
-				Aufgabe6();
+				aufgabe6();
 				break;
 			}
 			default: {
 				System.out.println("Ungueltige Eingabe.");
 				System.out.println("Bitte geben Sie erneut eine Zahl (1-6) ein, um die jeweilige Aufgabe zu starten.");
-				AuswahlAufgabe();
+				auswahlAufgabe();
 			}
 		}
 	}
 	
-	public static void Aufgabe1() {
+	public static void aufgabe1() {
 		System.out.println("Sie haben Sich fuer Aufgabe 1 entschieden.");
 		System.out.println("Um Ihren Bonus zu berechnen, geben Sie bitte ihre Nettoabnahmemange pro Jahr ein.");
 		
@@ -69,7 +69,7 @@ public class Verzweigungen {
 		}
 	}
 	
-	public static void Aufgabe2() {
+	public static void aufgabe2() {
 		System.out.println("Sie haben Sich fuer Aufgabe 2 entschieden.");
 		System.out.println("Um Ihre Zinsen zu berechnen, geben Sie bitte Ihren Kontostand ein.");
 		
@@ -92,7 +92,7 @@ public class Verzweigungen {
 		}
 	}
 	
-	public static void Aufgabe3() {
+	public static void aufgabe3() {
 		System.out.println("Sie haben Sich fuer Aufgabe 3 entschieden.");
 		System.out.println("Um Ihren Bruttolohn zu berechnen, geben Sie bitte Ihre geleisteten Arbeitsstunden pro Woche an.");
 		
@@ -126,7 +126,7 @@ public class Verzweigungen {
 		System.out.println("Ihr Bruttolohn betraegt " + bruttoLohn + "EUR.");
 	}
 	
-	public static void Aufgabe4() {
+	public static void aufgabe4() {
 		System.out.println("Sie haben Sich fuer Aufgabe 4 entschieden.");
 		System.out.println("Um zu bestimmen, ob Ihre Zahl gerade oder ungerade ist, geben Sie bitte eine positive, ganze Zahl ein.");
 		
@@ -141,7 +141,7 @@ public class Verzweigungen {
 		}
 	}
 	
-	public static void Aufgabe5() {
+	public static void aufgabe5() {
 		System.out.println("Sie haben Sich fuer Aufgabe 5 entschieden.");
 		System.out.println("Um zu bestimmen welcher Ihrer Zahlen die groesste ist, geben Sie bitte die Zahlen nacheinander ein");
 		
@@ -159,7 +159,7 @@ public class Verzweigungen {
 		} else {
 			System.out.println("Diese Zahl wurde bereits eingegeben.");
 			System.out.println("Alle Zahlen muessen sich unterscheiden.");
-			Aufgabe5();
+			aufgabe5();
 		}
 		
 		System.out.println("Dritte Zahl: ");
@@ -170,7 +170,7 @@ public class Verzweigungen {
 		} else {
 			System.out.println("Diese Zahl wurde bereits eingegeben.");
 			System.out.println("Alle Zahlen muessen sich unterscheiden.");
-			Aufgabe5();
+			aufgabe5();
 		}
 		
 		if (ersteZahl > zweiteZahl && ersteZahl > dritteZahl) {
@@ -182,7 +182,7 @@ public class Verzweigungen {
 		}
 	}
 	
-	public static void Aufgabe6() {
+	public static void aufgabe6() {
 		System.out.println("Sie haben Sich fuer Aufgabe 6 entschieden.");
 		System.out.println("Um zu bestimmen, ob Ihr Jahr ein Schaltjahr ist, geben Sie bitte das Jahr ein.");
 		
@@ -198,6 +198,6 @@ public class Verzweigungen {
 	}
 
 	public static void main(String[] args) {
-		AuswahlAufgabe(); 
+		auswahlAufgabe(); 
 	}
 }
