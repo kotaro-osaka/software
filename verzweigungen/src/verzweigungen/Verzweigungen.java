@@ -47,7 +47,7 @@ public class Verzweigungen {
 				break;
 			}
 			default: {
-				System.out.println("Ungültige Eingabe.");
+				System.out.println("Ungueltige Eingabe.");
 				System.out.println("Bitte geben Sie erneut eine Zahl (1-6) ein, um die jeweilige Aufgabe zu starten.");
 				AuswahlAufgabe();
 			}
@@ -55,7 +55,7 @@ public class Verzweigungen {
 	}
 	
 	public static void Aufgabe1() {
-		System.out.println("Sie haben Sich für Aufgabe 1 entschieden.");
+		System.out.println("Sie haben Sich fuer Aufgabe 1 entschieden.");
 		System.out.println("Um Ihren Bonus zu berechnen, geben Sie bitte ihre Nettoabnahmemange pro Jahr ein.");
 		
 		Scanner scanner1 = new Scanner(System.in);
@@ -70,7 +70,7 @@ public class Verzweigungen {
 	}
 	
 	public static void Aufgabe2() {
-		System.out.println("Sie haben Sich für Aufgabe 2 entschieden.");
+		System.out.println("Sie haben Sich fuer Aufgabe 2 entschieden.");
 		System.out.println("Um Ihre Zinsen zu berechnen, geben Sie bitte Ihren Kontostand ein.");
 		
 		Scanner scanner2 = new Scanner(System.in);
@@ -93,7 +93,7 @@ public class Verzweigungen {
 	}
 	
 	public static void Aufgabe3() {
-		System.out.println("Sie haben Sich für Aufgabe 3 entschieden.");
+		System.out.println("Sie haben Sich fuer Aufgabe 3 entschieden.");
 		System.out.println("Um Ihren Bruttolohn zu berechnen, geben Sie bitte Ihre geleisteten Arbeitsstunden pro Woche an.");
 		
 		Scanner scanner3 = new Scanner(System.in);
@@ -127,7 +127,7 @@ public class Verzweigungen {
 	}
 	
 	public static void Aufgabe4() {
-		System.out.println("Sie haben Sich für Aufgabe 4 entschieden.");
+		System.out.println("Sie haben Sich fuer Aufgabe 4 entschieden.");
 		System.out.println("Um zu bestimmen, ob Ihre Zahl gerade oder ungerade ist, geben Sie bitte eine positive, ganze Zahl ein.");
 		
 		Scanner scanner4 = new Scanner(System.in);
@@ -142,7 +142,7 @@ public class Verzweigungen {
 	}
 	
 	public static void Aufgabe5() {
-		System.out.println("Sie haben Sich für Aufgabe 5 entschieden.");
+		System.out.println("Sie haben Sich fuer Aufgabe 5 entschieden.");
 		System.out.println("Um zu bestimmen welcher Ihrer Zahlen die groesste ist, geben Sie bitte die Zahlen nacheinander ein");
 		
 		int ersteZahl = 0, zweiteZahl = 0, dritteZahl = 0;
@@ -183,7 +183,7 @@ public class Verzweigungen {
 	}
 	
 	public static void Aufgabe6() {
-		System.out.println("Sie haben Sich für Aufgabe 6 entschieden.");
+		System.out.println("Sie haben Sich fuer Aufgabe 6 entschieden.");
 		System.out.println("Um zu bestimmen, ob Ihr Jahr ein Schaltjahr ist, geben Sie bitte das Jahr ein.");
 		
 		Scanner scanner6 = new Scanner(System.in);
