@@ -198,7 +198,6 @@ public class Verzweigungen {
 	}
 
 	public static void main(String[] args) {
-		AuswahlAufgabe();
+		AuswahlAufgabe(); 
 	}
-
 }
