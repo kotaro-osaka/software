@@ -10,3 +10,4 @@
 7. [arrays](https://github.com/k0taro9/software/tree/dd4931cf0b3551b7d03ac14f3e215c3b9e8156a9/arrays)
 ## 2024
 1. [fakultaet](https://github.com/k0taro9/software/tree/c90a2ac47a4cf9970b3f2e7700fe9c3dd483d08b/fakultaet)
+2. [mehrdimensionales_array](https://github.com/k0taro9/software/tree/76fe182c38a58e0f25fb9a9ed738c8b6743df02d/mehrdimensionales_array)
