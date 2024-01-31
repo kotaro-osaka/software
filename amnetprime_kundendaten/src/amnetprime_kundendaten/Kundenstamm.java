@@ -8,8 +8,6 @@ public class Kundenstamm {
 		return anzahlKunden;
 	}
 
-	
-
 	public static Kunde[] liesKunden() {
 
 		Kunde[] kundenliste = new Kunde[getAnzahlKunden()];
