@@ -2,7 +2,7 @@ package amnetprime_kundendaten;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Date;
 
 public class Kunde {
 
@@ -35,9 +35,7 @@ public class Kunde {
 	}
 
 	public static int getAnzahlKunden() {
-
 		return Kundenstamm.getAnzahlKunden();
-
 	}
 
 	public String getNachname() {
@@ -67,6 +65,12 @@ public class Kunde {
 	public Date getGeburtsdatum() {
 		return geburtsdatum;
 	}
+	
+	// Hinzugefuegt
+	public String getFormattedGeburtsdatum() {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+		return dateFormat.format(this.geburtsdatum);
+	}
 
 	public void setGeburtsdatum(Date geburtsdatum) {
 		this.geburtsdatum = geburtsdatum;
@@ -90,6 +94,12 @@ public class Kunde {
 
 	public Date getKundeSeit() {
 		return kundeSeit;
+	}
+	
+	// Hinzugefuegt
+	public String getFormattedKundeSeit() {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+		return dateFormat.format(this.kundeSeit);
 	}
 
 	public void setKundeSeit(Date kundeSeit) {
@@ -132,8 +142,7 @@ public class Kunde {
 		return this.getVorname()+ " " + this.getNachname();
 	}
 	
-	
-	private  Date stringToDate(String string) {
+	private Date stringToDate(String string) {
 
 		Date datum = new Date();
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM.yyyy");
@@ -146,7 +155,5 @@ public class Kunde {
 		}
 
 		return datum;
-
 	}
-	
 }

@@ -73,7 +73,5 @@ public class Kundenstamm {
 		kundenliste[58]= new Kunde(4230,"Dorothea","Stiegltz","10.02.1988","Rappaportstasse 7",45768,"Marl","01.08.2009","w","ledig",0);
 
 		return kundenliste;
-
 	}
-
 }
