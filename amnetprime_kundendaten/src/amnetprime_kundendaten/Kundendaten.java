@@ -226,6 +226,7 @@ public class Kundendaten {
 	
 	// Wichtig: Bei gewuenschter Konsolenausgabe zweites Argument auf true setzen ('consoleOut = true')
 	// ArrayList, da verschiedene Datentypen nicht in einem Array gespeichert werden koennen - Typ Object macht es mit ArrayList moeglich
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		Kunde[] kundenliste = Kundenstamm.liesKunden();
 		
