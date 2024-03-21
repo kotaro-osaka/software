@@ -13,3 +13,4 @@
 2. [mehrdimensionales_array](https://github.com/k0taro9/software/tree/76fe182c38a58e0f25fb9a9ed738c8b6743df02d/mehrdimensionales_array)
 3. [fibonacci_zahlen](https://github.com/k0taro9/software/tree/ca0dbe208365ae3f9e9d583aaeb9f7dba20f7563/fibonacci_zahlen)
 4. [amnetprime_kundendaten](https://github.com/k0taro9/software/tree/23ec0de5f5f3fa860fec30bcc0a5d9b3081b7521/amnetprime_kundendaten)
+5. [Berichtigung Klassenarbeit 3](https://github.com/kotaro-9/software/tree/8debaf7e909ae8ef9eef8f8eb6f2e70640cd2ca7/berichtigung_klassenarbeit_3)
