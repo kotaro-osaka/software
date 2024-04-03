@@ -14,6 +14,7 @@ public class Verzweigungen {
 		System.out.println("5. Nach Eingabe dreier Zahlen, bestimmen, welche von ihnen die groesste Zahl ist");
 		System.out.println("6. Nach Eingabe einer Jahreszahl, bestimmen, ob es sich um ein Schaltjahr handelt");
 		
+		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		auswahl = scanner.nextInt();
 		
@@ -58,6 +59,7 @@ public class Verzweigungen {
 		System.out.println("Sie haben Sich fuer Aufgabe 1 entschieden.");
 		System.out.println("Um Ihren Bonus zu berechnen, geben Sie bitte ihre Nettoabnahmemange pro Jahr ein.");
 		
+		@SuppressWarnings("resource")
 		Scanner scanner1 = new Scanner(System.in);
 		double nettoJahr = scanner1.nextDouble();
 		
@@ -73,6 +75,7 @@ public class Verzweigungen {
 		System.out.println("Sie haben Sich fuer Aufgabe 2 entschieden.");
 		System.out.println("Um Ihre Zinsen zu berechnen, geben Sie bitte Ihren Kontostand ein.");
 		
+		@SuppressWarnings("resource")
 		Scanner scanner2 = new Scanner(System.in);
 		double kontoStand = scanner2.nextDouble();
 		
@@ -96,6 +99,7 @@ public class Verzweigungen {
 		System.out.println("Sie haben Sich fuer Aufgabe 3 entschieden.");
 		System.out.println("Um Ihren Bruttolohn zu berechnen, geben Sie bitte Ihre geleisteten Arbeitsstunden pro Woche an.");
 		
+		@SuppressWarnings("resource")
 		Scanner scanner3 = new Scanner(System.in);
 		
 		double wochenStunden = scanner3.nextDouble();
@@ -113,6 +117,7 @@ public class Verzweigungen {
 				ueberStunden = wochenStunden - 35;
 				System.out.println("An wievielen ihrer " + ueberStunden + " Ueberstunden haben Sie an Sonn- oder Feiertagen gearbeitet?");
 				
+				@SuppressWarnings("resource")
 				Scanner scannerSonnFeierTagStunden = new Scanner(System.in);
 				
 				double sonnFeierTagStunden = scannerSonnFeierTagStunden.nextDouble();
@@ -130,6 +135,7 @@ public class Verzweigungen {
 		System.out.println("Sie haben Sich fuer Aufgabe 4 entschieden.");
 		System.out.println("Um zu bestimmen, ob Ihre Zahl gerade oder ungerade ist, geben Sie bitte eine positive, ganze Zahl ein.");
 		
+		@SuppressWarnings("resource")
 		Scanner scanner4 = new Scanner(System.in);
 		
 		double ganzePositiveZahl = scanner4.nextDouble();
@@ -146,6 +152,7 @@ public class Verzweigungen {
 		System.out.println("Um zu bestimmen welcher Ihrer Zahlen die groesste ist, geben Sie bitte die Zahlen nacheinander ein");
 		
 		int ersteZahl = 0, zweiteZahl = 0, dritteZahl = 0;
+		@SuppressWarnings("resource")
 		Scanner scanner5 = new Scanner(System.in);
 		
 		System.out.println("Erste Zahl: ");
@@ -186,6 +193,7 @@ public class Verzweigungen {
 		System.out.println("Sie haben Sich fuer Aufgabe 6 entschieden.");
 		System.out.println("Um zu bestimmen, ob Ihr Jahr ein Schaltjahr ist, geben Sie bitte das Jahr ein.");
 		
+		@SuppressWarnings("resource")
 		Scanner scanner6 = new Scanner(System.in);
 		
 		int jahr = scanner6.nextInt();
