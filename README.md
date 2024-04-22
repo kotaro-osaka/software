@@ -14,3 +14,4 @@
 3. [fibonacci_zahlen](https://github.com/k0taro9/software/tree/ca0dbe208365ae3f9e9d583aaeb9f7dba20f7563/fibonacci_zahlen)
 4. [amnetprime_kundendaten](https://github.com/k0taro9/software/tree/23ec0de5f5f3fa860fec30bcc0a5d9b3081b7521/amnetprime_kundendaten)
 5. [Berichtigung Klassenarbeit 3](https://github.com/kotaro-9/software/tree/8debaf7e909ae8ef9eef8f8eb6f2e70640cd2ca7/berichtigung_klassenarbeit_3)
+6. [Sorting Algorithms](https://github.com/kotaro-9/software/tree/3d7c30cf4de839840f8812eea33592e4ef571963/sorting_algorithms)
