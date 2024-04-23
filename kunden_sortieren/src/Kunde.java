@@ -3,7 +3,6 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Kunde {
-
 	private int kundennummer;
 	private String nachname;
 	private String vorname;
@@ -33,9 +32,7 @@ public class Kunde {
 	}
 
 	public static int getAnzahlKunden() {
-
 		return Kundenstamm.getAnzahlKunden();
-
 	}
 
 	public String getNachname() {
@@ -144,7 +141,6 @@ public class Kunde {
 		}
 
 		return datum;
-
 	}
 	
 }
