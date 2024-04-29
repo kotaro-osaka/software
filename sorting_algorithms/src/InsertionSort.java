@@ -16,7 +16,7 @@ public class InsertionSort {
 
             while (temp >= 0 && list[temp] > key) {
                 list[temp + 1] = list[temp];
-                temp = temp-1;
+                temp = temp - 1;
             }
             list[temp + 1] = key;
         }

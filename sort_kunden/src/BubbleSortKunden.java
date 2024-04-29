@@ -6,6 +6,22 @@ public class BubbleSortKunden {
         return Kundenstamm.liesKunden();
     }
 
+    public static void main(String[] args) {
+        Kunde[] kunden = createKunden();
+
+        nachname(kunden);
+        System.out.println();
+        vorname(kunden);
+        System.out.println();
+        vornameNachname(kunden);
+        System.out.println();
+        geburtsjahr(kunden);
+        System.out.println();
+        plz(kunden);
+        System.out.println();
+        familienstand(kunden);
+    }
+
     static void nachname(Kunde[] kunden) {
         Kunde temp;
 
@@ -118,20 +134,4 @@ public class BubbleSortKunden {
         }
     }
 
-
-    public static void main(String[] args) {
-        Kunde[] kunden = createKunden();
-
-        nachname(kunden);
-        System.out.println();
-        vorname(kunden);
-        System.out.println();
-        vornameNachname(kunden);
-        System.out.println();
-        geburtsjahr(kunden);
-        System.out.println();
-        plz(kunden);
-        System.out.println();
-        familienstand(kunden);
-    }
 }
