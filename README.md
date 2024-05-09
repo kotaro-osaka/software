@@ -16,3 +16,4 @@
 5. [Berichtigung Klassenarbeit 3](https://github.com/kotaro-9/software/tree/8debaf7e909ae8ef9eef8f8eb6f2e70640cd2ca7/berichtigung_klassenarbeit_3) <sub>archived</sub>
 6. [Sorting Algorithms](https://github.com/kotaro-9/software/tree/3d7c30cf4de839840f8812eea33592e4ef571963/sorting_algorithms)
 7. [Sort Kunden](https://github.com/kotaro-9/software/tree/68581e37af0bc209eb6df5ecc9d1b41f4259f777/sort_kunden)
+8. [Kunden ArrayList](https://github.com/kotaro-9/software/tree/24e6a996c5dffe1c814cb72d267b109879cc8250/kunden_arraylist)
