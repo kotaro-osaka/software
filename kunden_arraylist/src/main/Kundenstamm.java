@@ -1,4 +1,9 @@
+package main;
+
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Kundenstamm {
 
@@ -82,11 +87,153 @@ public class Kundenstamm {
         Kunde[] kundenArray = liesKunden();
         ArrayList<Kunde> kundenArrayList = new ArrayList<>();
 
-        for (Kunde kunde : kundenArray) {
-            kundenArrayList.add(kunde);
-        }
+        kundenArrayList.addAll(Arrays.asList(kundenArray));
 
         return kundenArrayList;
+    }
+
+    public static ArrayList<Kunde> sortArrayList() {
+        ArrayList<Kunde> kunden = liesKundenAsArrayList();
+
+        Collections.sort(kunden);
+
+        return kunden;
+    }
+
+    public static ArrayList<Kunde> sortArrayListByKundennummer() {
+        ArrayList<Kunde> kunden = liesKundenAsArrayList();
+
+        Collections.sort(kunden, Comparator.comparing(Kunde::getKundennummer));
+
+        return kunden;
+    }
+
+    public static ArrayList<Kunde> sortArrayListByNachnameAsCaseSensitive() {
+        ArrayList<Kunde> kunden = liesKundenAsArrayList();
+
+        Collections.sort(kunden, Comparator.comparing(Kunde::getNachname));
+
+        return kunden;
+    }
+
+    public static ArrayList<Kunde> sortArrayListByNachnameAsCaseInsensitive() {
+        ArrayList<Kunde> kunden = liesKundenAsArrayList();
+
+        Collections.sort(kunden, Comparator.comparing((Kunde k) -> k.getNachname().toLowerCase()));
+
+        return kunden;
+    }
+
+    public static ArrayList<Kunde> sortArrayListByVornameAsCaseSensitive() {
+        ArrayList<Kunde> kunden = liesKundenAsArrayList();
+
+        Collections.sort(kunden, Comparator.comparing(Kunde::getVorname));
+
+        return kunden;
+    }
+
+    public static ArrayList<Kunde> sortArrayListByVornameAsCaseInsensitive() {
+        ArrayList<Kunde> kunden = liesKundenAsArrayList();
+
+        Collections.sort(kunden, Comparator.comparing((Kunde k) -> k.getVorname().toLowerCase()));
+
+        return kunden;
+    }
+
+    public static ArrayList<Kunde> sortArrayListByFullNameAsCaseSensitive() {
+        ArrayList<Kunde> kunden = liesKundenAsArrayList();
+
+        Collections.sort(kunden, Comparator.comparing(Kunde::getFullName));
+
+        return kunden;
+    }
+
+    public static ArrayList<Kunde> sortArrayListByFullNameAsCaseInsensitive() {
+        ArrayList<Kunde> kunden = liesKundenAsArrayList();
+
+        Collections.sort(kunden, Comparator.comparing((Kunde k) -> k.getFullName().toLowerCase()));
+
+        return kunden;
+    }
+
+    public static ArrayList<Kunde> sortArrayListByGeburtsdatum() {
+        ArrayList<Kunde> kunden = liesKundenAsArrayList();
+
+        Collections.sort(kunden, Comparator.comparing(Kunde::getGeburtsdatum));
+
+        return kunden;
+    }
+
+    public static ArrayList<Kunde> sortArrayListByStrasseAsCaseSensitive() {
+        ArrayList<Kunde> kunden = liesKundenAsArrayList();
+
+        Collections.sort(kunden, Comparator.comparing(Kunde::getStrasse));
+
+        return kunden;
+    }
+
+    public static ArrayList<Kunde> sortArrayListByStrasseAsCaseInsensitive() {
+        ArrayList<Kunde> kunden = liesKundenAsArrayList();
+
+        Collections.sort(kunden, Comparator.comparing((Kunde k) -> k.getStrasse().toLowerCase()));
+
+        return kunden;
+    }
+
+    public static ArrayList<Kunde> sortArrayListByPLZ() {
+        ArrayList<Kunde> kunden = liesKundenAsArrayList();
+
+        Collections.sort(kunden, Comparator.comparing(Kunde::getPlz));
+
+        return kunden;
+    }
+
+    public static ArrayList<Kunde> sortArrayListByOrtAsCaseSensitive() {
+        ArrayList<Kunde> kunden = liesKundenAsArrayList();
+
+        Collections.sort(kunden, Comparator.comparing(Kunde::getOrt));
+
+        return kunden;
+    }
+
+    public static ArrayList<Kunde> sortArrayListByOrtAsCaseInsensitive() {
+        ArrayList<Kunde> kunden = liesKundenAsArrayList();
+
+        Collections.sort(kunden, Comparator.comparing((Kunde k) -> k.getOrt().toLowerCase()));
+
+        return kunden;
+    }
+
+    public static ArrayList<Kunde> sortArraylistByKundeSeit() {
+        ArrayList<Kunde> kunden = liesKundenAsArrayList();
+
+        Collections.sort(kunden, Comparator.comparing(Kunde::getKundeSeit));
+
+        return kunden;
+    }
+
+    public static ArrayList<Kunde> sortArrayListByGeschlecht() {
+        ArrayList<Kunde> kunden = liesKundenAsArrayList();
+
+        Collections.sort(kunden, Comparator.comparing(Kunde::getKundeSeit));
+
+        return kunden;
+    }
+
+    public static ArrayList<Kunde> sortArrayListByFamilienstand() {
+        ArrayList<Kunde> kunden = liesKundenAsArrayList();
+
+        Collections.sort(kunden, Comparator.comparing(Kunde::getFamilienstand));
+
+        return kunden;
+    }
+
+    public static ArrayList<Kunde> sortArrayListByAboTyp() {
+        ArrayList<Kunde> kunden = liesKundenAsArrayList();
+
+        Collections.sort(kunden, Comparator.comparing(Kunde::getAboTyp));
+
+        return kunden;
     }
 
 }

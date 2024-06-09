@@ -1,8 +1,10 @@
+package main;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
-public class Kunde {
+public class Kunde implements Comparable<Kunde> {
     private int kundennummer;
     private String nachname;
     private String vorname;
@@ -164,6 +166,10 @@ public class Kunde {
             datum = null;
         }
         return datum;
+    }
+
+    public int compareTo(Kunde other) {
+        return this.nachname.compareTo(other.nachname);
     }
 
 }
