@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class BubbleSortKundenArrayList {
 
-    static int anzahlKunden = Kundenstamm.getAnzahlKundenArrayList();
+    private static final int anzahlKunden = Kundenstamm.getAnzahlKundenArrayList();
 
     public static void main(String[] args) {
         ArrayList<Kunde> kunden = Kundenstamm.liesKundenAsArrayList();
@@ -22,7 +22,7 @@ public class BubbleSortKundenArrayList {
         familienstand(kunden);
     }
 
-    static void nachname(ArrayList<Kunde> kunden) {
+    private static void nachname(ArrayList<Kunde> kunden) {
         Kunde temp;
 
         for (int i = 0; i < anzahlKunden; i++) {
@@ -40,7 +40,7 @@ public class BubbleSortKundenArrayList {
         }
     }
 
-    static void vorname(ArrayList<Kunde> kunden) {
+    private static void vorname(ArrayList<Kunde> kunden) {
         Kunde temp;
 
         for (int i = 0; i < anzahlKunden; i++) {
@@ -59,7 +59,7 @@ public class BubbleSortKundenArrayList {
     }
 
 
-    static void vornameNachname(ArrayList<Kunde> kunden) {
+    private static void vornameNachname(ArrayList<Kunde> kunden) {
         Kunde temp;
 
         for (int i = 0; i < anzahlKunden; i++) {
@@ -78,7 +78,7 @@ public class BubbleSortKundenArrayList {
     }
 
 
-    static void geburtsjahr(ArrayList<Kunde> kunden) {
+    private static void geburtsjahr(ArrayList<Kunde> kunden) {
         Kunde temp;
 
         for (int i = 0; i < anzahlKunden; i++) {
@@ -97,7 +97,7 @@ public class BubbleSortKundenArrayList {
     }
 
 
-    static void plz(ArrayList<Kunde> kunden) {
+    private static void plz(ArrayList<Kunde> kunden) {
         Kunde temp;
 
         for (int i = 0; i < anzahlKunden; i++) {
@@ -116,7 +116,7 @@ public class BubbleSortKundenArrayList {
     }
 
 
-    static void familienstand(ArrayList<Kunde> kunden) {
+    private static void familienstand(ArrayList<Kunde> kunden) {
         Kunde temp;
 
         for (int i = 0; i < anzahlKunden; i++) {

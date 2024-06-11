@@ -80,7 +80,7 @@ public class TestSortArrayList {
         aboTyp();
     }
 
-    public static void sort() {
+    private static void sort() {
         ArrayList<Kunde> kunden;
 
         kunden = Kundenstamm.sortArrayList();
@@ -90,7 +90,7 @@ public class TestSortArrayList {
         }
     }
 
-    public static void kundennummer() {
+    private static void kundennummer() {
         ArrayList<Kunde> kunden;
 
         kunden = Kundenstamm.sortArrayListByKundennummer();
@@ -100,7 +100,7 @@ public class TestSortArrayList {
         }
     }
 
-    public static void nachnameAsCaseSensitive() {
+    private static void nachnameAsCaseSensitive() {
         ArrayList<Kunde> kunden;
 
         kunden = Kundenstamm.sortArrayListByNachnameAsCaseSensitive();
@@ -110,7 +110,7 @@ public class TestSortArrayList {
         }
     }
 
-    public static void nachnameAsCaseInsensitive() {
+    private static void nachnameAsCaseInsensitive() {
         ArrayList<Kunde> kunden;
 
         kunden = Kundenstamm.sortArrayListByNachnameAsCaseInsensitive();
@@ -120,7 +120,7 @@ public class TestSortArrayList {
         }
     }
 
-    public static void vornameAsCaseSensitive() {
+    private static void vornameAsCaseSensitive() {
         ArrayList<Kunde> kunden;
 
         kunden = Kundenstamm.sortArrayListByVornameAsCaseSensitive();
@@ -130,7 +130,7 @@ public class TestSortArrayList {
         }
     }
 
-    public static void vornameAsCaseInsensitive() {
+    private static void vornameAsCaseInsensitive() {
         ArrayList<Kunde> kunden;
 
         kunden = Kundenstamm.sortArrayListByVornameAsCaseInsensitive();
@@ -140,7 +140,7 @@ public class TestSortArrayList {
         }
     }
 
-    public static void fullNameAsCaseSensitive() {
+    private static void fullNameAsCaseSensitive() {
         ArrayList<Kunde> kunden;
 
         kunden = Kundenstamm.sortArrayListByFullNameAsCaseSensitive();
@@ -150,7 +150,7 @@ public class TestSortArrayList {
         }
     }
 
-    public static void fullNameAsCaseInsensitive() {
+    private static void fullNameAsCaseInsensitive() {
         ArrayList<Kunde> kunden;
 
         kunden = Kundenstamm.sortArrayListByFullNameAsCaseInsensitive();
@@ -160,7 +160,7 @@ public class TestSortArrayList {
         }
     }
 
-    public static void geburtsdatum() {
+    private static void geburtsdatum() {
         ArrayList<Kunde> kunden;
 
         kunden = Kundenstamm.sortArrayListByGeburtsdatum();
@@ -170,7 +170,7 @@ public class TestSortArrayList {
         }
     }
 
-    public static void strasseAsCaseSensitive() {
+    private static void strasseAsCaseSensitive() {
         ArrayList<Kunde> kunden;
 
         kunden = Kundenstamm.sortArrayListByStrasseAsCaseSensitive();
@@ -180,7 +180,7 @@ public class TestSortArrayList {
         }
     }
 
-    public static void strasseAsCaseInsensitive() {
+    private static void strasseAsCaseInsensitive() {
         ArrayList<Kunde> kunden;
 
         kunden = Kundenstamm.sortArrayListByStrasseAsCaseInsensitive();
@@ -190,7 +190,7 @@ public class TestSortArrayList {
         }
     }
 
-    public static void plz() {
+    private static void plz() {
         ArrayList<Kunde> kunden;
 
         kunden = Kundenstamm.sortArrayListByPLZ();
@@ -200,7 +200,7 @@ public class TestSortArrayList {
         }
     }
 
-    public static void ortAsCaseSensitive() {
+    private static void ortAsCaseSensitive() {
         ArrayList<Kunde> kunden;
 
         kunden = Kundenstamm.sortArrayListByOrtAsCaseSensitive();
@@ -210,7 +210,7 @@ public class TestSortArrayList {
         }
     }
 
-    public static void ortAsCaseInsensitive() {
+    private static void ortAsCaseInsensitive() {
         ArrayList<Kunde> kunden;
 
         kunden = Kundenstamm.sortArrayListByOrtAsCaseInsensitive();
@@ -220,7 +220,7 @@ public class TestSortArrayList {
         }
     }
 
-    public static void kundeSeit() {
+    private static void kundeSeit() {
         ArrayList<Kunde> kunden;
 
         kunden = Kundenstamm.sortArraylistByKundeSeit();
@@ -230,7 +230,7 @@ public class TestSortArrayList {
         }
     }
 
-    public static void geschlecht() {
+    private static void geschlecht() {
         ArrayList<Kunde> kunden;
 
         kunden = Kundenstamm.sortArrayListByGeschlecht();
@@ -240,7 +240,7 @@ public class TestSortArrayList {
         }
     }
 
-    public static void familienstandAsCaseSensitive() {
+    private static void familienstandAsCaseSensitive() {
         ArrayList<Kunde> kunden;
 
         kunden = Kundenstamm.sortArrayListByFamilienstand();
@@ -250,7 +250,7 @@ public class TestSortArrayList {
         }
     }
 
-    public static void aboTyp() {
+    private static void aboTyp() {
         ArrayList<Kunde> kunden;
 
         kunden = Kundenstamm.sortArrayListByAboTyp();
