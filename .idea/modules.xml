@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Lager/Lager.iml" filepath="$PROJECT_DIR$/Lager/Lager.iml" />
       <module fileurl="file://$PROJECT_DIR$/kunden_arraylist/kunden_arraylist.iml" filepath="$PROJECT_DIR$/kunden_arraylist/kunden_arraylist.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/software.iml" filepath="$PROJECT_DIR$/.idea/software.iml" />
       <module fileurl="file://$PROJECT_DIR$/sort_kunden/sort_kunden.iml" filepath="$PROJECT_DIR$/sort_kunden/sort_kunden.iml" />
