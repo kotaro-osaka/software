@@ -2,40 +2,36 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Box {
-    private int id;
     private String farbe;
+    private final ArrayList<Kleidungsstueck> kleidungsstuecke = new ArrayList<>();
 
-    private String[] kleidungsstueckArten = { "Schuhe", "Jacke", "Hemd" };
-    private ArrayList<Kleidungsstueck> kleidungsstuecke = new ArrayList<>();
+    public Box(String neueFarbe) {
+        farbe = neueFarbe;
 
-    Box(int id, String farbe) {
-        this.id = id;
-        this.farbe = farbe;
-
-        System.out.println("Box erstellt");
-
-        createKleidungsstuecke();
+        for (int i = 0; i < new Random().nextInt(7); i++) {
+            kleidungsstuecke.add(new Kleidungsstueck());
+        }
     }
 
-    private void createKleidungsstuecke() {
-        int numKleidungsstuecke = new Random().nextInt(6);
-        for (int i = 0; i < numKleidungsstuecke; i++) {
-            String art = kleidungsstueckArten[new Random().nextInt(2)];
-            int groesse = new Random().nextInt(10) + 1;
-            int zustand = new Random().nextInt(4) + 1;
+    public ArrayList<Kleidungsstueck> getKleidungsstuecke() {
+        return kleidungsstuecke;
+    }
 
-            Kleidungsstueck kleidungsstueck = new Kleidungsstueck(i + 1, art, groesse, zustand);
+    public int getKleidungsstueckeSize() {
+        return kleidungsstuecke.size();
+    }
 
-            // Append to list kleidungsstuecke
-            kleidungsstuecke.add(kleidungsstueck);
-        }
+    public String getFarbe() {
+        return farbe;
+    }
+
+    public void setFarbe(String farbe) {
+        this.farbe = farbe;
     }
 
     @Override
     public String toString() {
-        return "Box}" +
-                "id=" + id +
-                ", farbe=" + farbe +
-                "}";
+        return "\t" + "Box: " + getFarbe() + "\t" + "Inhalt: " + kleidungsstuecke.size();
     }
+
 }

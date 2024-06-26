@@ -1,38 +1,37 @@
-import java.util.ArrayList;
-import java.util.Random;
-
 public class Regal {
-    private int id;
+    private int nummer;
+    private final Fach[] faecher;
 
-    private ArrayList<Fach> faecher = new ArrayList<>();
+    public Regal(int neueNummer, int anzahlFaecher) {
+        nummer = neueNummer;
+        faecher = new Fach[anzahlFaecher];
 
-    Regal(int id) {
-        this.id = id;
-
-        System.out.println("Regal erstellt");
-
-        createFaecher();
-    }
-
-    private void createFaecher() {
-        int numFaecher = new Random().nextInt(3) + 3;
-        for (int i = 0; i < numFaecher; i++) {
-            Fach fach = new Fach(i + 1);
-
-            // Append to list faecher
-            faecher.add(fach);
+        for (int i = 0; i < anzahlFaecher; i++) {
+            faecher[i] = new Fach();
         }
     }
 
-    public ArrayList<Fach> getFaecher() {
-
+    public Fach[] getFaecher() {
         return faecher;
+    }
+
+    public int getNummer() {
+        return nummer;
+    }
+
+    public void setNummer(int nummer) {
+        this.nummer = nummer;
     }
 
     @Override
     public String toString() {
-        return "Regal{" +
-                "id=" + id +
-                "}";
+        String result = "Regal Nummer: " + getNummer();
+
+        for (Fach fach : faecher) {
+            result += "\t" + "\n" + fach.toString();
+        }
+
+        return result;
     }
+
 }

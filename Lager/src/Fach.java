@@ -1,33 +1,32 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 public class Fach {
-    private int id;
+    private final Box[] boxen = new Box[4];
+    private final ArrayList<String> boxFarben = new ArrayList<>(Arrays.asList("blau", "gelb", "gruen", "rot"));
 
-    private String[] boxFarben = { "rot", "gruen", "blau", "weiss" };
-    private ArrayList<Box> boxen = new ArrayList<>();
+    Fach() {
+        Collections.shuffle(boxFarben);
 
-    Fach(int id) {
-        this.id = id;
-
-        System.out.println("Fach erstellt");
-
-        createBoxen();
+        for (int i = 0; i < 4; i++) {
+            boxen[i] = new Box(boxFarben.get(i));
+        }
     }
 
-    private void createBoxen() {
-        for (int i = 0; i < 4; i++) {
-            Box box = new Box(i + 1, boxFarben[i]);
-
-            // Append to list boxen
-            boxen.add(box);
-        }
+    public Box[] getBoxen() {
+        return boxen;
     }
 
     @Override
     public String toString() {
-        return "Fach{" +
-                "id=" + id +
-                "}";
+        StringBuilder result = new StringBuilder("Fach");
+
+        for (Box box : boxen) {
+            result.append("\t" + "\n").append(box.toString());
+        }
+
+        return result.toString();
     }
+
 }
