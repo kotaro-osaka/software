@@ -36,6 +36,7 @@ public class Taschenrechner {
 		bottomPanel.setBackground(Color.BLACK);
 		
 		JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, topPanel, bottomPanel);
+		
 		GridBagLayout gbl_bottomPanel = new GridBagLayout();
 		gbl_bottomPanel.columnWidths = new int[]{0, 0, 0, 0, 0};
 		gbl_bottomPanel.rowHeights = new int[]{0, 0, 0, 0, 0, 0};
