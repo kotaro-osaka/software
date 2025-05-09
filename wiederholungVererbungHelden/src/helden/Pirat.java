@@ -1,6 +1,7 @@
 package helden;
 
 public class Pirat extends Held {
+	@SuppressWarnings("unused")
 	private int kraft;
 	private int anzahlSchwerter;
 	
@@ -10,7 +11,7 @@ public class Pirat extends Held {
 	}
 	
 	public int getAnzahlSchwerter() {
-		return anzahlSchwerter;
+		return this.anzahlSchwerter;
 	}
 	
 	public void setAnzahlSchwerter(int anzahlSchwerter) {

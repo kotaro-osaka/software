@@ -1,10 +1,11 @@
 package helden;
 
 public class Zauberer extends Held {
+	@SuppressWarnings("unused")
 	private int kraft;
 	private int anzahlZaubersprueche;
 	
-	public Zauberer(int kraft) {
+	public Zauberer(int kraft, int anzahlZaubersprueche) {
 		super(kraft);
 		this.anzahlZaubersprueche = anzahlZaubersprueche;
 	}
