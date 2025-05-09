@@ -7,9 +7,7 @@ public abstract class Held {
 		this.kraft = kraft;
 	}
 	
-	public int getKraft() {
-		return this.kraft;
-	}
+	public abstract int getKraft();
 	
 	public void setKraft(int kraft) {
 		this.kraft = kraft;

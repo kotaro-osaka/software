@@ -10,6 +10,11 @@ public class Zauberer extends Held {
 		this.anzahlZaubersprueche = anzahlZaubersprueche;
 	}
 	
+	@Override
+	public int getKraft() {
+		return this.kraft;
+	}
+	
 	public int getAnzahlZaubersprueche() {
 		return anzahlZaubersprueche;
 	}

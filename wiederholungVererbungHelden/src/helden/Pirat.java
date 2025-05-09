@@ -10,6 +10,11 @@ public class Pirat extends Held {
 		this.anzahlSchwerter = 100;
 	}
 	
+	@Override
+	public int getKraft() {
+		return this.kraft;
+	}	
+	
 	public int getAnzahlSchwerter() {
 		return this.anzahlSchwerter;
 	}
