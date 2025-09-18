@@ -21,6 +21,10 @@ public class Datenbank {
             } else {
                 System.err.println("No rows returned from the count query.");
             }
+            
+			rs.close();
+			stmt.close();
+			conn.close();
         } catch (SQLException ex) {
             System.err.println("Error Code " + ex.getErrorCode() + " | " + ex.getMessage());
         }
@@ -42,14 +46,23 @@ public class Datenbank {
 				int kundennummer = rs.getInt("Kundennummer");
 				String vorname = rs.getString("Vorname");
 				String nachname = rs.getString("Nachname");
-				// LocalDate geburtsdatum = rs.getLocalDate("GebDatum");
-				// String strasse = rs.getString("Straße");
-				// LocalDate kundeSeit = rs.getLocalDate();
+				LocalDate geburtsdatum = rs.getDate("GebDatum").toLocalDate();
+				String strasse = rs.getString("Straße");
+				LocalDate kundeSeit = rs.getDate("KundeSeit").toLocalDate();
+				int plz = rs.getInt("plzBez");
+				String ort = rs.getString("ortBezeichnung");
+				String geschlecht = rs.getString("geschBEZ");
+				String familienstand = rs.getString("Bezeichnung");
+				String abotyp = rs.getString("aboBez");
 				
-				kunden[kundenIdx] = new Kunde(kundennummer, vorname, nachname);
+				kunden[kundenIdx] = new Kunde(kundennummer, vorname, nachname, geburtsdatum, strasse, kundeSeit, plz, ort, geschlecht, familienstand, abotyp);
 				
 				kundenIdx += 1;
 			}
+			
+			rs.close();
+			stmt.close();
+			conn.close();
 		} catch (SQLException ex) {
 			System.err.println("Error: " + ex.getMessage());
 		}
@@ -78,12 +91,16 @@ public class Datenbank {
 					System.out.println();
 				}
 			}
+			
+			rs.close();
 			stmt.close();
+			conn.close();
 		} catch (SQLException ex) {
 			System.err.println(ex.getErrorCode() + ex.getMessage());
 		}
 	}
 
+	// Kundennummer > 5000
 	/*public static void insertKunde(int kundennummer, String vorname, String nachname, LocalDate gebDatum,
 			String strasse, LocalDate kundeSeit, int plzId, int geschId, int famStaId, int aboId) {
 		try (Connection conn = DriverManager.getConnection(MYSQL_URL, USER, PASSWORD)) {
@@ -93,7 +110,10 @@ public class Datenbank {
 					+ "');";
 			Statement stmt = conn.createStatement();
 			stmt.execute(query);
+			
+			rs.close();
 			stmt.close();
+			conn.close();
 		} catch (SQLException ex) {
 			System.err.println(ex.getErrorCode() + ex.getMessage());
 		}
