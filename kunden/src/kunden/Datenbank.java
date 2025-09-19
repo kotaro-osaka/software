@@ -99,23 +99,4 @@ public class Datenbank {
 			System.err.println(ex.getErrorCode() + ex.getMessage());
 		}
 	}
-
-	// Kundennummer > 5000
-	/*public static void insertKunde(int kundennummer, String vorname, String nachname, LocalDate gebDatum,
-			String strasse, LocalDate kundeSeit, int plzId, int geschId, int famStaId, int aboId) {
-		try (Connection conn = DriverManager.getConnection(MYSQL_URL, USER, PASSWORD)) {
-			String query = "INSERT INTO kunde (Kundennummer, Vorname, Nachname, GebDatum, Straße, KundeSeit, PlzID, GeschID, FamStaID, AboID) VALUES ('"
-					+ kundennummer + "', '" + vorname + "', '" + nachname + "', '" + gebDatum + "', '" + strasse
-					+ "', '" + kundeSeit + "', '" + plzId + "', '" + geschId + "', '" + famStaId + "', '" + aboId
-					+ "');";
-			Statement stmt = conn.createStatement();
-			stmt.execute(query);
-			
-			rs.close();
-			stmt.close();
-			conn.close();
-		} catch (SQLException ex) {
-			System.err.println(ex.getErrorCode() + ex.getMessage());
-		}
-	}*/
 }
