@@ -71,28 +71,28 @@ public class LoginWindow extends JFrame {
 		contentPane.add(btnLogin);
 	}
 
-	public void authenticate() {
-		LoginData[] loginData = Database.getLoginData("SELECT * FROM benutzer ORDER BY benutzer.USER_ID");
-		
+	public void authenticate() {		
 		String username = inputUsername.getText().trim();
 		String password = new String(inputPassword.getPassword()).trim();
 		
 		// Check if empty
 		if (username.isEmpty() || password.isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Please fill in all fields.");
+			inputUsername.setText("");
+			inputPassword.setText("");
 			return;
 		}
 		
-		// Check against existing credentials
-		for (LoginData entry : loginData) {
-			if (username.equals(entry.getUserId()) && password.equals(entry.getPassword())) {
-				// Continue dialog
-				MainWindow mainWindow = new MainWindow();
-				mainWindow.setVisible(true);
-				dispose();
-			} else {
-				JOptionPane.showMessageDialog(null, "Invalid username or password");
-			}
+		// Check whether user exists
+		if (Database.userExists(username, password)) {
+			// Continue dialog
+			MainWindow mainWindow = new MainWindow();
+			mainWindow.setVisible(true);
+			dispose();
+		} else {
+			JOptionPane.showMessageDialog(null, "Invalid username or password");
+			inputUsername.setText("");
+			inputPassword.setText("");
 		}
 	}
 }

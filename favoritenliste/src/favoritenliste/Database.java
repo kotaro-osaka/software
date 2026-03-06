@@ -7,7 +7,7 @@ public class Database {
 	private static final String USER = "root";
 	private static final String PASSWORD = "";
 
-	public static short getDataSetSize(String query) {
+	/*public static short getDataSetSize(String query) {
     	String countQuery = "SELECT COUNT(*) AS row_count FROM (" + query + ") AS dynamic_query";
         short rows = -1;
         
@@ -29,26 +29,14 @@ public class Database {
         }
         
         return rows;
-    }
+    }*/
 	
-	public static LoginData[] getLoginData(String query) {
-		short rows = getDataSetSize(query);
-		
-		LoginData[] loginData = new LoginData[rows];
-		
+	public static boolean userExists(String username, String password) {		
 		try (Connection conn = DriverManager.getConnection(MYSQL_URL, USER, PASSWORD);
-				Statement stmt = conn.createStatement();
-				ResultSet rs = stmt.executeQuery(query)) {
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT USER_ID, PASSWORD FROM benutzer WHERE USER_ID =\"" + username + "\" && PASSWORD = \"" + password + "\";")) {
 
-			int idx = 0;
-			while (rs.next()) {
-				String username = rs.getString("USER_ID");
-				String password = rs.getString("PASSWORD");
-				
-				loginData[idx] = new LoginData(username, password);
-				
-				idx += 1;
-			}
+			if (rs.next()) return true;
 			
 			rs.close();
 			stmt.close();
@@ -57,7 +45,7 @@ public class Database {
 			System.err.println("Error: " + ex.getMessage());
 		}
 		
-		return loginData;
+		return false;
 	}
 	
 	public static void printUserData() {
