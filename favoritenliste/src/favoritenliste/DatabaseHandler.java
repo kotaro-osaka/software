@@ -2,8 +2,9 @@ package favoritenliste;
 
 import java.sql.*;
 
-public class Database {
+public class DatabaseHandler {
 	private static final String MYSQL_URL = "jdbc:mysql://localhost:3306/amnetprimemovies";
+	private static final String SQLITE_URL = "jdbc:sqlite:E:\\HeidiSQL_11.1_64_Portable\\amnetprimemovies.db";
 	private static final String USER = "root";
 	private static final String PASSWORD = "";
 

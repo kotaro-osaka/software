@@ -84,7 +84,7 @@ public class LoginWindow extends JFrame {
 		}
 		
 		// Check whether user exists
-		if (Database.userExists(username, password)) {
+		if (DatabaseHandler.userExists(username, password)) {
 			// Continue dialog
 			MainWindow mainWindow = new MainWindow();
 			mainWindow.setVisible(true);
