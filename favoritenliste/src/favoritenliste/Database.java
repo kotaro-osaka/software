@@ -2,9 +2,9 @@ package favoritenliste;
 
 import java.sql.*;
 
-public class DatabaseHandler {
-	private static final String MYSQL_URL = "jdbc:mysql://localhost:3306/amnetprimemovies";
+public class Database {
 	private static final String SQLITE_URL = "jdbc:sqlite:E:\\HeidiSQL_11.1_64_Portable\\amnetprimemovies.db";
+	private static final String MYSQL_URL = "jdbc:mysql://localhost:3306/amnetprimemovies";
 	private static final String USER = "root";
 	private static final String PASSWORD = "";
 
@@ -32,8 +32,13 @@ public class DatabaseHandler {
         return rows;
     }*/
 	
-	public static boolean userExists(String username, String password) {		
-		try (Connection conn = DriverManager.getConnection(MYSQL_URL, USER, PASSWORD);
+	public static boolean userExists(String username, String password, Boolean useSQLite) {
+		String url;
+		
+		if (useSQLite) url = SQLITE_URL;
+		else url = MYSQL_URL;
+			
+		try (Connection conn = DriverManager.getConnection(url, USER, PASSWORD);
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery("SELECT USER_ID, PASSWORD FROM benutzer WHERE USER_ID =\"" + username + "\" && PASSWORD = \"" + password + "\";")) {
 
@@ -49,7 +54,7 @@ public class DatabaseHandler {
 		return false;
 	}
 	
-	public static void printUserData() {
+	/*public static void printUserData() {
 		try (Connection conn = DriverManager.getConnection(MYSQL_URL, USER, PASSWORD)) {
 			System.out.println("Erfolgreich mit Datenbank verbunden");
 			
@@ -78,5 +83,5 @@ public class DatabaseHandler {
 		} catch (SQLException ex) {
 			System.err.println(ex.getErrorCode() + ex.getMessage());
 		}
-	}
+	}*/
 }
