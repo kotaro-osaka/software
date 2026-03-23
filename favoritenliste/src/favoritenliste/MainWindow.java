@@ -16,9 +16,10 @@ public class MainWindow extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	static JRadioButton rdbtnSQLite;
-	static JRadioButton rdbtnMYSql
-	JRadioButton rdbtnMySQL;
+	private JLabel lblDatabaseSelection;
+	private static JRadioButton rdbtnSQLite;
+	private JRadioButton rdbtnMySql;
+	private JButton btnLogin;
 
 	/**
 	 * Launch the application.
@@ -46,22 +47,22 @@ public class MainWindow extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		
-		JLabel lblDatabaseSelection = new JLabel("Please select your preferred Database");
+
+		lblDatabaseSelection = new JLabel("Please select your preferred Database");
 		contentPane.add(lblDatabaseSelection);
-		
+
 		rdbtnSQLite = new JRadioButton("SQLite");
 		contentPane.add(rdbtnSQLite);
 		rdbtnSQLite.setSelected(true);
-		
-		rdbtnMySQL = new JRadioButton("MySQL");
-		contentPane.add(rdbtnMySQL);
-		
+
+		rdbtnMySql = new JRadioButton("MySQL");
+		contentPane.add(rdbtnMySql);
+
 		ButtonGroup btnGroup = new ButtonGroup();
 		btnGroup.add(rdbtnSQLite);
-		btnGroup.add(rdbtnMySQL);
-		
-		JButton btnLogin = new JButton("Login");
+		btnGroup.add(rdbtnMySql);
+
+		btnLogin = new JButton("Login");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				login();
@@ -69,20 +70,30 @@ public class MainWindow extends JFrame {
 		});
 		contentPane.add(btnLogin);
 	}
-	
+
 	private void login() {
 		LoginWindow loginWindow = new LoginWindow(this); // this = parent
 		loginWindow.setVisible(true);
 		
-		if (loginWindow.)
+		if (loginWindow.getLoginStatus()) {
+			lblDatabaseSelection.setVisible(false);
+			rdbtnSQLite.setVisible(false);
+			rdbtnMySql.setVisible(false);
+			btnLogin.setVisible(false);
+			
+			JLabel lblNumFilms = new JLabel();
+			lblNumFilms.setText(String.valueOf(getNumFilms()));
+			contentPane.add(lblNumFilms);
+		}
 	}
-	
+
 	public static Boolean sqliteSelected() {
 		if (rdbtnSQLite.isSelected()) return true;
+
 		return false;
 	}
-	
-	public static void getNumFilms() {
-		// Define in db
+
+	public static int getNumFilms() {
+		return Database.getNumFilms(sqliteSelected());
 	}
 }

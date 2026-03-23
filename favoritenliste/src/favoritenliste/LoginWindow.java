@@ -22,7 +22,7 @@ public class LoginWindow extends JDialog {
 	private JPanel contentPane;
 	private JTextField inputUsername;
 	private JPasswordField inputPassword;
-	public 
+	public Boolean loginSuccess = false;
 
 	/**
 	 * Launch the application.
@@ -45,7 +45,7 @@ public class LoginWindow extends JDialog {
 	 */
 	public LoginWindow(JFrame parent) {
 		super(parent, "Login", true);
-		
+
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -53,19 +53,19 @@ public class LoginWindow extends JDialog {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-		
+
 		JLabel lblUsername = new JLabel("Username");
 		contentPane.add(lblUsername);
-		
+
 		inputUsername = new JTextField(10);
 		contentPane.add(inputUsername);
-		
+
 		JLabel lblPassword = new JLabel("Password");
 		contentPane.add(lblPassword);
-		
+
 		inputPassword = new JPasswordField(10);
 		contentPane.add(inputPassword);
-		
+
 		JButton btnLogin = new JButton("Login");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -75,26 +75,34 @@ public class LoginWindow extends JDialog {
 		contentPane.add(btnLogin);
 	}
 
-	private void authenticate() {		
+	private void authenticate() {
 		String username = inputUsername.getText().trim();
 		String password = new String(inputPassword.getPassword()).trim();
-		
+
 		// Check if empty
 		if (username.isEmpty() || password.isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Please fill in all fields.");
+
 			inputUsername.setText("");
 			inputPassword.setText("");
+
 			return;
 		}
-		
+
 		// Check whether user exists
 		if (Database.userExists(username, password, MainWindow.sqliteSelected())) {
 			loginSuccess = true;
-			dispose();			
+
+			dispose();
 		} else {
 			JOptionPane.showMessageDialog(null, "Invalid username or password");
+
 			inputUsername.setText("");
 			inputPassword.setText("");
 		}
+	}
+	
+	public boolean getLoginStatus() {
+		return loginSuccess;
 	}
 }

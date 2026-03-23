@@ -8,39 +8,18 @@ public class Database {
 	private static final String USER = "root";
 	private static final String PASSWORD = "";
 
-	/*public static short getDataSetSize(String query) {
-    	String countQuery = "SELECT COUNT(*) AS row_count FROM (" + query + ") AS dynamic_query";
-        short rows = -1;
-        
-        try (Connection conn = DriverManager.getConnection(MYSQL_URL, USER, PASSWORD)) {
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(countQuery);
-            
-            if (rs.next()) {
-                rows = rs.getShort("row_count");
-            } else {
-                System.err.println("No rows returned from the count query.");
-            }
-            
-			rs.close();
-			stmt.close();
-			conn.close();
-        } catch (SQLException ex) {
-            System.err.println("Error Code " + ex.getErrorCode() + " | " + ex.getMessage());
-        }
-        
-        return rows;
-    }*/
-	
 	public static boolean userExists(String username, String password, Boolean useSQLite) {
 		String url;
 		
 		if (useSQLite) url = SQLITE_URL;
 		else url = MYSQL_URL;
 			
-		try (Connection conn = DriverManager.getConnection(url, USER, PASSWORD);
+		System.out.println("Using SQLite DB: " + SQLITE_URL);
+		try (Connection conn = useSQLite
+				? DriverManager.getConnection(SQLITE_URL)
+				: DriverManager.getConnection(MYSQL_URL, USER, PASSWORD);
 			Statement stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT USER_ID, PASSWORD FROM benutzer WHERE USER_ID =\"" + username + "\" && PASSWORD = \"" + password + "\";")) {
+			ResultSet rs = stmt.executeQuery("SELECT USER_ID, PASSWORD FROM benutzer WHERE USER_ID =\"" + username + "\" AND PASSWORD = \"" + password + "\";")) {
 
 			if (rs.next()) return true;
 			
@@ -53,6 +32,52 @@ public class Database {
 		
 		return false;
 	}
+	
+	public static int getNumFilms(Boolean useSQLite) {
+		String url;
+		
+		if (useSQLite) url = SQLITE_URL;
+		else url = MYSQL_URL;
+			
+		try (Connection conn = DriverManager.getConnection(url, USER, PASSWORD);
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM filme;")) {
+
+			if (rs.next()) return rs.getInt(1);
+			
+			rs.close();
+			stmt.close();
+			conn.close();
+		} catch (SQLException ex) {
+		    ex.printStackTrace(); // instead of just getMessage()
+		}
+		
+		return 0;
+	}
+	
+	/*public static short getDataSetSize(String query) {
+	String countQuery = "SELECT COUNT(*) AS row_count FROM (" + query + ") AS dynamic_query";
+    short rows = -1;
+    
+    try (Connection conn = DriverManager.getConnection(MYSQL_URL, USER, PASSWORD)) {
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery(countQuery);
+        
+        if (rs.next()) {
+            rows = rs.getShort("row_count");
+        } else {
+            System.err.println("No rows returned from the count query.");
+        }
+        
+		rs.close();
+		stmt.close();
+		conn.close();
+    } catch (SQLException ex) {
+        System.err.println("Error Code " + ex.getErrorCode() + " | " + ex.getMessage());
+    }
+    
+    return rows;
+}*/
 	
 	/*public static void printUserData() {
 		try (Connection conn = DriverManager.getConnection(MYSQL_URL, USER, PASSWORD)) {
