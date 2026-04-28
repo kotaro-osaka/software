@@ -18,6 +18,7 @@ import javax.swing.JPasswordField;
 
 public class LoginWindow extends JDialog {
 
+	private MainWindow parent;
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField inputUsername;
@@ -42,10 +43,11 @@ public class LoginWindow extends JDialog {
 
 	/**
 	 * Create the frame.
-	 */
-	public LoginWindow(JFrame parent) {
+	*/
+	public LoginWindow(MainWindow parent) {
 		super(parent, "Login", true);
-
+		this.parent = parent;
+		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -90,7 +92,7 @@ public class LoginWindow extends JDialog {
 		}
 
 		// Check whether user exists
-		if (Database.userExists(username, password, MainWindow.sqliteSelected())) {
+		if (Database.userExists(username, password, parent.sqliteSelected())) {
 			loginSuccess = true;
 
 			dispose();

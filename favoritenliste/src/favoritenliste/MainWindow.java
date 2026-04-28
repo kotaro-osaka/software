@@ -5,11 +5,15 @@ import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
+import javax.swing.JTable;
 import javax.swing.JButton;
+import javax.swing.JScrollPane;
 
 import java.awt.event.ActionListener;
+import java.util.List;
 import java.awt.event.ActionEvent;
 
 public class MainWindow extends JFrame {
@@ -17,9 +21,10 @@ public class MainWindow extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JLabel lblDatabaseSelection;
-	private static JRadioButton rdbtnSQLite;
+	private JRadioButton rdbtnSQLite;
 	private JRadioButton rdbtnMySql;
 	private JButton btnLogin;
+	private JTable filmTable;
 
 	/**
 	 * Launch the application.
@@ -62,7 +67,7 @@ public class MainWindow extends JFrame {
 		btnGroup.add(rdbtnSQLite);
 		btnGroup.add(rdbtnMySql);
 
-		btnLogin = new JButton("Login");
+		btnLogin = new JButton("Continue");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				login();
@@ -81,19 +86,37 @@ public class MainWindow extends JFrame {
 			rdbtnMySql.setVisible(false);
 			btnLogin.setVisible(false);
 			
+			setBounds(100, 100, 500, 300);
+			
 			JLabel lblNumFilms = new JLabel();
-			lblNumFilms.setText(String.valueOf(getNumFilms()));
+			lblNumFilms.setText(String.valueOf(getNumFilms()) + " Films");
 			contentPane.add(lblNumFilms);
+			
+			List<Film> films = getFilms();
+			
+			String[] columnNames = { "Title", "Year" };
+			DefaultTableModel tableModel = new DefaultTableModel(columnNames, 0); // init with 0 rows
+			
+			for (Film film : films) {
+				tableModel.addRow(new Object[] { film.getTitle(), film.getYear() });
+			}
+			
+			filmTable = new JTable(tableModel);
+			JScrollPane scrollPane = new JScrollPane(filmTable);
+			scrollPane.setBounds(10, 140, 550, 200);
+			contentPane.add(scrollPane);
 		}
 	}
 
-	public static Boolean sqliteSelected() {
-		if (rdbtnSQLite.isSelected()) return true;
-
-		return false;
+	public boolean sqliteSelected() {
+		return rdbtnSQLite.isSelected();
 	}
 
-	public static int getNumFilms() {
+	private int getNumFilms() {
 		return Database.getNumFilms(sqliteSelected());
+	}
+	
+	private List<Film> getFilms() {
+		return Database.getFilms(sqliteSelected());
 	}
 }
